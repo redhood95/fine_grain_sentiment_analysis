@@ -1,9 +1,13 @@
+import warnings 
+warnings.filterwarnings('ignore')
 import pandas as pd
 import numpy as np
-
+from keras.preprocessing.text import Tokenizer
+from keras.preprocessing.sequence import pad_sequences
+from sklearn.model_selection import train_test_split
 
 class Jigsaw:
-    def load(self,path_2_data):
+    def load(self):
         train = pd.read_csv('data/jigsaw/train/train.csv')
         list_classes = ["toxic", "severe_toxic", "obscene", "threat", "insult", "identity_hate"]
         y = train[list_classes].values

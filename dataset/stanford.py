@@ -25,7 +25,7 @@ class SST:
         le.fit(y)
         y = le.transform(y)
         
-        y = to_categorical(
+        y = to_categorical(y)
         train_x , x , train_y , y = train_test_split(X_t , y , 
                                             test_size = 0.3 ,
                                             random_state = 324)

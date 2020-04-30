@@ -4,35 +4,18 @@ from dataset.ISEAR import Isear
 from dataset.jigsaw import Jigsaw
 from dataset.stanford import SST
 
-data1 = Isear()
+dataset = 'jigsaw'
 
-train_x,train_y,eval_x  , eval_y, test_x , test_y = data1.load()
-print('shape of isear')
-print(train_x.shape)
-print(train_y.shape)
-print(eval_x.shape)
-print(eval_y.shape)
-print(test_x.shape)
-print(test_y.shape)
 
-data2 = Jigsaw()
+if dataset == 'isear':
 
-train_x,train_y,eval_x  , eval_y, test_x , test_y = data2.load()
-print('shape of toxic comment data')
-print(train_x.shape)
-print(train_y.shape)
-print(eval_x.shape)
-print(eval_y.shape)
-print(test_x.shape)
-print(test_y.shape)
+    data1 = Isear()
+    train_x,train_y,eval_x  , eval_y, test_x , test_y = data1.load()
+elif dataset == 'jigsaw':
+ 
+    data2 = Jigsaw()
+    train_x,train_y,eval_x  , eval_y, test_x , test_y = data2.load()
 
-data3 = SST()
-
-train_x,train_y,eval_x  , eval_y, test_x , test_y = data3.load()
-print('shape of toxic comment data')
-print(train_x.shape)
-print(train_y.shape)
-print(eval_x.shape)
-print(eval_y.shape)
-print(test_x.shape)
-print(test_y.shape)
+elif dataset == 'stanford':  
+    data3 = SST()
+    train_x,train_y,eval_x  , eval_y, test_x , test_y = data3.load()
